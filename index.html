@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Inspire deep</title>
+    <!-- Load Tailwind CSS for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the app. Tailwind handles most of the layout. */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Light background */
+        }
+        .post-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header Section -->
+    <header class="py-12 bg-white border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Heading: INSPIRE (Black), CO (Red), CO. (Black) -->
+            <h1 class="text-6xl font-extrabold text-center tracking-tighter text-gray-800">
+                INSPIRE 
+                <span style="color: #ef4444;">CO</span> 
+                .
+            </h1>
+            <p class="text-xl text-center mt-4 text-gray-500">
+                A deep drive .
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area: Moon Photos/Posts -->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-gray-700">Just The Moon And You✨</h2>
+
+        <!-- Grid for Posts (Responsive Layout) -->
+        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
+
+            <!-- Moon Photo Post 1 -->
+            <article class="post-card bg-white rounded-xl overflow-hidden">
+                <!-- Use the 'images/' folder path -->
+                <img src="images/moon-photo-1.jpg.png" alt="A waxing crescent " class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Glow that melt my Heart</h3>
+                    <p class="text-gray-500 text-sm mb-4">September 26, 2025</p>
+                    <p class="text-gray-600">
+                        I Always find the new reason to gaze at You✨, The 🌙Crescent Waxing Moon literally melted my heart like an Chocolate.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Moon Photo Post 2 -->
+            <article class="post-card bg-white rounded-xl overflow-hidden">
+                <!-- Use the 'images/' folder path -->
+                <img src="images/moon-photo-2.png" alt="Full light Fill you " class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">A Full🌕 in the Blue Hour</h3>
+                    <p class="text-gray-500 text-sm mb-4">June 22, 2025</p>
+                    <p class="text-gray-600">
+                        A stunning shot of the 🌕Full moon just after sunset. This phase I love to be under Mountains and Light up your World like Moon does in the sky .
+                    </p>
+                </div>
+            </article>
+
+            <!-- Moon Photo Post 3 -->
+            <article class="post-card bg-white rounded-xl overflow-hidden md:col-span-2">
+                <!-- This post spans the full width on medium/large screens -->
+                <!-- Use the 'images/' folder path -->
+                <img src="images/moon-photo-3.png" alt="Close-up of moon craters" class="w-full h-80 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Impact Zones: Close-up Detail</h3>
+                    <p class="text-gray-500 text-sm mb-4">May 7, 2025</p>
+                    <p class="text-gray-600">
+                        Every i see you i will fall in love❤️ with you again and again. Fall in Love not just beacause you are beautiful, Your Authenticity, Resilience, Intelligence, Creativity, Blush, Your Ability to fill the darkness. Make me to fall..The World Always see the full moon🌕 because its avaliable and lighting up..but Trust me i can find you in your darks🌑. I promise 
+                    </p>
+                </div>
+            </article>
+
+            <!-- Moon Photo Post 4 (Optional) -->
+            <article class="post-card bg-white rounded-xl overflow-hidden">
+                <!-- Use the 'images/' folder path -->
+                <img src="images/moon-photo-4.png" alt="Moon rising above mountains" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">The Huge Universe</h3>
+                    <p class="text-gray-500 text-sm mb-4">July 30, 2025</p>
+                    <p class="text-gray-600">
+                        Planets like earth🌏 will born and die in seconds in big universe, "Being human in the earth🌏 is always a Great Gift" . You are not my star🌟💫  you are the Universe🌌.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 py-6">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2025 Inspire deep co. All rights reserved Just letting Know how much I Love You MY Moon..</p>
+        </div>
+    </footer>
+
+    <!-- Link to your main.js file -->
+    <script src="main.js"></script>
+</body>
+</html>
