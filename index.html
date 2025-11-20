@@ -1,42 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where is Moon</title>
+  <meta charset="UTF-8" />
+  <title>Where is Moon – Space Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+      font-family: Arial, sans-serif;
+      position: relative;
+      color: white;
+    }
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* MOVING STARFIELD */
+    .stars {
+      width: 200%;
+      height: 200%;
+      background: transparent url("https://www.transparenttextures.com/patterns/stardust.png")
+        repeat;
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      animation: drift 40s linear infinite;
+      opacity: 0.4;
+      z-index: 0;
+    }
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: url('images/wallpaper.png') no-repeat center center fixed;
-            background-size: cover;
-        }
+    @keyframes drift {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(20%, 20%);
+      }
+    }
 
-        /* COLOR CHANGING ANIMATION */
-        @keyframes colorChange {
-            0%   { color: #ef4444; }   /* red */
-            25%  { color: #3b82f6; }   /* blue */
-            50%  { color: #10b981; }   /* green */
-            75%  { color: #a855f7; }   /* purple */
-            100% { color: #ef4444; }   /* back to red */
-        }
+    /* ROTATING MOON */
+    .moon {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: url("https://i.imgur.com/1bX5QH6.png") no-repeat center / cover;
+      top: 5%;
+      right: 5%;
+      animation: spin 25s linear infinite;
+      opacity: 0.85;
+      z-index: 1;
+    }
 
-        .color-animate {
-            font-size: 90px;
-            font-weight: 900;
-            animation: colorChange 4s infinite linear;
-        }
-    </style>
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* FLOATING ANIMATIONS */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes float2 {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(25px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* COLOR ANIMATIONS */
+    @keyframes neon {
+      0% {
+        text-shadow: 0 0 10px #ff00ff;
+        color: #ff00ff;
+      }
+      50% {
+        text-shadow: 0 0 20px #00ffff;
+        color: #00ffff;
+      }
+      100% {
+        text-shadow: 0 0 10px #ff00ff;
+        color: #ff00ff;
+      }
+    }
+
+    @keyframes pastel {
+      0% {
+        color: #ffb3ba;
+      }
+      33% {
+        color: #baffc9;
+      }
+      66% {
+        color: #bae1ff;
+      }
+      100% {
+        color: #ffb3ba;
+      }
+    }
+
+    @keyframes randomColors {
+      0% {
+        color: #ef4444;
+      }
+      25% {
+        color: #3b82f6;
+      }
+      50% {
+        color: #10b981;
+      }
+      75% {
+        color: #a855f7;
+      }
+      100% {
+        color: #ef4444;
+      }
+    }
+
+    /* TEXT STYLES */
+
+    /* 1 - Big horizontal NEON */
+    .t1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 85px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      animation: neon 3s infinite alternate, float 4s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    /* 2 - Small straight PASTEL (bottom-left) */
+    .t2 {
+      position: absolute;
+      bottom: 15%;
+      left: 10%;
+      font-size: 40px;
+      animation: pastel 5s infinite linear, float2 6s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    /* 3 - Medium RANDOM colors (right side) */
+    .t3 {
+      position: absolute;
+      top: 55%;
+      right: 8%;
+      font-size: 55px;
+      font-weight: 900;
+      animation: randomColors 3s infinite linear, float 5s infinite ease-in-out;
+      z-index: 2;
+    }
+
+    /* 4 - Small RANDOM colors (bottom-center) */
+    .t4 {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      animation: randomColors 2s infinite alternate, float2 4s infinite ease-in-out;
+      z-index: 2;
+    }
+  </style>
 </head>
 
-<body class="flex items-center justify-center h-screen bg-black/40 backdrop-blur-md">
+<body>
+  <div class="stars"></div>
+  <div class="moon"></div>
 
-    <h1 class="color-animate tracking-wider">
-        #WHERE IS MOON
-    </h1>
-
+  <div class="t1">#WHERE IS MOON</div>
+  <div class="t2">#WHERE IS MOON</div>
+  <div class="t3">#WHERE IS MOON</div>
+  <div class="t4">#WHERE IS MOON</div>
 </body>
 </html>
