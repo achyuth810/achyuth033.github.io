@@ -1,194 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Where is Moon – Space Landing Page</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspire co.</title>
+
+<style>
     body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      background: black;
-      font-family: Arial, sans-serif;
-      position: relative;
-      color: white;
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: url('images/wallpaper.png') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding-bottom: 50px;
     }
 
-    /* MOVING STARFIELD */
-    .stars {
-      width: 200%;
-      height: 200%;
-      background: transparent url("https://www.transparenttextures.com/patterns/stardust.png")
-        repeat;
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      animation: drift 40s linear infinite;
-      opacity: 0.4;
-      z-index: 0;
+    /* Header */
+    .brand {
+        margin-top: 40px;
+        font-size: 65px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+    .brand .co {
+        color: red;
+    }
+    .brand .dot {
+        color: white;
     }
 
-    @keyframes drift {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(20%, 20%);
-      }
+    /* 4 Big Beautiful Moon Tabs */
+    .moon-container {
+        margin: 60px auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        gap: 35px;
+        width: 90%;
+        max-width: 1100px;
     }
 
-    /* ROTATING MOON */
-    .moon {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      background: url("https://science.nasa.gov/image-detail/amf-pia00405/") no-repeat center / cover;
-      top: 5%;
-      right: 5%;
-      animation: spin 25s linear infinite;
-      opacity: 0.85;
-      z-index: 1;
+    .moon-box {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 25px;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        transition: 0.4s ease;
+        cursor: pointer;
     }
 
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+    .moon-box:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 15px 35px rgba(255,255,255,0.25);
+        border-color: rgba(255,255,255,0.5);
     }
 
-    /* FLOATING ANIMATIONS */
-    @keyframes float {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+    .moon-box img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 18px;
     }
 
-    @keyframes float2 {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(25px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+    .moon-title {
+        font-size: 26px;
+        margin-top: 20px;
+        font-weight: 600;
     }
 
-    /* COLOR ANIMATIONS */
-    @keyframes neon {
-      0% {
-        text-shadow: 0 0 10px #ff00ff;
-        color: #ff00ff;
-      }
-      50% {
-        text-shadow: 0 0 20px #00ffff;
-        color: #00ffff;
-      }
-      100% {
-        text-shadow: 0 0 10px #ff00ff;
-        color: #ff00ff;
-      }
+    .moon-desc {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-top: 8px;
+        line-height: 1.5;
     }
-
-    @keyframes pastel {
-      0% {
-        color: #ffb3ba;
-      }
-      33% {
-        color: #baffc9;
-      }
-      66% {
-        color: #bae1ff;
-      }
-      100% {
-        color: #ffb3ba;
-      }
-    }
-
-    @keyframes randomColors {
-      0% {
-        color: #ef4444;
-      }
-      25% {
-        color: #3b82f6;
-      }
-      50% {
-        color: #10b981;
-      }
-      75% {
-        color: #a855f7;
-      }
-      100% {
-        color: #ef4444;
-      }
-    }
-
-    /* TEXT STYLES */
-
-    /* 1 - Big horizontal NEON */
-    .t1 {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 85px;
-      font-weight: 900;
-      letter-spacing: 4px;
-      animation: neon 3s infinite alternate, float 4s infinite ease-in-out;
-      z-index: 2;
-    }
-
-    /* 2 - Small straight PASTEL (bottom-left) */
-    .t2 {
-      position: absolute;
-      bottom: 15%;
-      left: 10%;
-      font-size: 40px;
-      animation: pastel 5s infinite linear, float2 6s infinite ease-in-out;
-      z-index: 2;
-    }
-
-    /* 3 - Medium RANDOM colors (right side) */
-    .t3 {
-      position: absolute;
-      top: 55%;
-      right: 8%;
-      font-size: 55px;
-      font-weight: 900;
-      animation: randomColors 3s infinite linear, float 5s infinite ease-in-out;
-      z-index: 2;
-    }
-
-    /* 4 - Small RANDOM colors (bottom-center) */
-    .t4 {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 32px;
-      animation: randomColors 2s infinite alternate, float2 4s infinite ease-in-out;
-      z-index: 2;
-    }
-  </style>
+</style>
 </head>
 
 <body>
-  <div class="stars"></div>
-  <div class="moon"></div>
 
-  <div class="t1">#WHERE IS MOON</div>
-  <div class="t2">#WHERE IS MOON</div>
-  <div class="t3">#WHERE IS MOON</div>
-  <div class="t4">#WHERE IS MOON</div>
+    <!-- Brand Name -->
+    <div class="brand">
+        Inspire <span class="co">co</span><span class="dot">.</span>
+    </div>
+
+    <!-- Moon Tabs -->
+    <div class="moon-container">
+
+        <div class="moon-box">
+            <img src="images/moon-photo-1.jpg.png" alt="Moon 1">
+            <div class="moon-title">Moon — Chapter 1</div>
+            <div class="moon-desc">
+                The moon isn’t just beautiful to me —  
+                it’s the quiet glow that calms my chaos.
+            </div>
+        </div>
+
+        <div class="moon-box">
+            <img src="images/moon-photo-2.png" alt="Moon 2">
+            <div class="moon-title">Moon — Chapter 2</div>
+            <div class="moon-desc">
+                I look at the moon the way others look at miracles.  
+                Maybe because it always finds a way to shine.
+            </div>
+        </div>
+
+        <div class="moon-box">
+            <img src="images/moon-photo-3.png" alt="Moon 3">
+            <div class="moon-title">Moon — Chapter 3</div>
+            <div class="moon-desc">
+                Every phase of the moon reminds me that  
+                even in my shadows, I am growing.
+            </div>
+        </div>
+
+        <div class="moon-box">
+            <img src="images/moon-photo-4.png" alt="Moon 4">
+            <div class="moon-title">Moon — Chapter 4</div>
+            <div class="moon-desc">
+                I don’t love the moon —  
+                I belong to it.  
+                It’s the only light that understands me.
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
