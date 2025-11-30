@@ -116,14 +116,11 @@
 
     </div>
     <script>
-        // A unique key only for your website. You can rename it.
-        const counterUrl = "https://api.countapi.xyz/hit/inspire001/visits";
-    
-        fetch(counterUrl)
+        fetch("https://counterapi.dev/api/inspire001/visits")
           .then(response => response.json())
           .then(data => {
-              console.log("Total Visits:", data.value); // ONLY YOU CAN SEE THIS
+            console.log("Total Visits:", data.count);
           });
-    </script>
+        </script>
 </body>
 </html>
