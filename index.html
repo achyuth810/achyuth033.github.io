@@ -116,10 +116,10 @@
 
     </div>
     <script>
-        fetch("https://counterapi.dev/api/inspire001/visits")
-          .then(response => response.json())
+        fetch("https://hits.sh/inspire001-visits.json")
+          .then(res => res.json())
           .then(data => {
-            console.log("Total Visits:", data.count);
+            console.log("Total Visits:", data.hits);
           });
         </script>
 </body>
