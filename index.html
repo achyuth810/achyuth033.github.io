@@ -115,5 +115,15 @@
         </p>
 
     </div>
+    <script>
+        // A unique key only for your website. You can rename it.
+        const counterUrl = "https://api.countapi.xyz/hit/myhiddenvisitcounter987/visits";
+    
+        fetch(counterUrl)
+          .then(response => response.json())
+          .then(data => {
+              console.log("Total Visits:", data.value); // ONLY YOU CAN SEE THIS
+          });
+    </script>
 </body>
 </html>
