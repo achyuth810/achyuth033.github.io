@@ -20,12 +20,12 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad.mp3",
       mood: "sad",
-      quote: "Smile — Baby."
+      quote: "Koncham Motivate cheddam ani."
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad2.mp3",
       mood: "sad",
-      quote: "Wonderful Universe deep."
+      quote: "Wonderful Universe chikiri."
     },
     {
         url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad3.mp3",
