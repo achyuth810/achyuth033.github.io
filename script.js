@@ -15,7 +15,7 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/love1.mp3",
       mood: "love",
-      quote: "Found Moon."
+      quote: "Found Moon." 
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad.mp3",
