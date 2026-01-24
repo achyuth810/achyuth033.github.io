@@ -18,6 +18,41 @@ const ALL_SONGS = [
       quote: "Found Moon." 
     },
     {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Nuvvena+.mp3",
+      mood: "love",
+      quote: "Coffee...tagutara." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Chilipiga+-+Karthik.mp3",
+      mood: "love",
+      quote: "Infinite Love." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Padithinammo+-+Vishwa.mp3",
+      mood: "love",
+      quote: "Padithinammo ." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Chulbuli+Chulbuli+-+Karthik.mp3",
+      mood: "love",
+      quote: "Pilla Puli, Kopam Lo kuda cuteness haa." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Neeli+Meghamula+lo+.mp3",
+      mood: "love",
+      quote: "Want to Touch clouds.. right?." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Kilimanjaro.mp3",
+      mood: "love",
+      quote: "Em pettalo idea ledu (AI)  ." 
+    },
+    {
+      url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Neetho.mp3",
+      mood: "love",
+      quote: "fav Song.. ." 
+    },
+    {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad.mp3",
       mood: "sad",
       quote: "Koncham Motivate cheddam ani."
