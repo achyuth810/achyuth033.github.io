@@ -10,12 +10,12 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Chikiri.mp3",
       mood: "love",
-      quote: "Can I call you Chikiri?"
+      quote: "Can I Call You ..Chikiri Chikiri ?"
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/love1.mp3",
       mood: "love",
-      quote: "Found Moon." 
+      quote: " Beautiful Moon ." 
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Nuvvena+.mp3",
@@ -30,7 +30,7 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Padithinammo+-+Vishwa.mp3",
       mood: "love",
-      quote: "Padithinammo ." 
+      quote: "Padithinammo ..." 
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Chulbuli+Chulbuli+-+Karthik.mp3",
@@ -40,7 +40,7 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Neeli+Meghamula+lo+.mp3",
       mood: "love",
-      quote: "Want to Touch clouds.. right?." 
+      quote: "Bangaru kalla bujjammo." 
     },
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/Kilimanjaro.mp3",
@@ -60,7 +60,7 @@ const ALL_SONGS = [
     {
       url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad2.mp3",
       mood: "sad",
-      quote: "Wonderful Universe chikiri."
+      quote: "Wonderful Universe...."
     },
     {
         url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/sad3.mp3",
@@ -70,7 +70,7 @@ const ALL_SONGS = [
       {
         url: "https://myheartifymusic.s3.us-east-1.amazonaws.com/youreyes.mp3",
         mood: "love",
-        quote: "abbo.. kallu untai chudu."
+        quote: "abbo.. kallu untai chudu...."
       }
 
 
