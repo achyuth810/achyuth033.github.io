@@ -242,3 +242,31 @@ h1 {
   }
   h1 { font-size: 32px; }
 }
+/* ===== Responsive: Mobile Fix ===== */
+@media (max-width: 500px) {
+  .container {
+    width: 92vw;
+    /* Change fixed height to auto-fit content on small screens */
+    height: auto; 
+    min-height: 440px; 
+    padding: 24px 16px;
+    gap: 12px;
+    border-radius: 24px;
+  }
+
+  h1 {
+    font-size: 28px; /* Smaller title for mobile */
+  }
+
+  #songQuote {
+    font-size: 13px;
+    min-height: 60px; /* Give more room for wrapped text */
+    max-width: 280px;
+  }
+
+  .mood-buttons button {
+    flex: 1 1 40%; /* Two buttons per row on mobile */
+    font-size: 11px;
+    padding: 10px 5px;
+  }
+}
