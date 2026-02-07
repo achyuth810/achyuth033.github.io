@@ -244,28 +244,63 @@ h1 {
 }
 /* ===== Responsive: Mobile Fix ===== */
 @media (max-width: 500px) {
+  body {
+    padding: 10px; /* More room for the box */
+  }
+
   .container {
-    width: 92vw;
-    /* Change fixed height to auto-fit content on small screens */
-    height: auto; 
-    min-height: 440px; 
-    padding: 24px 16px;
-    gap: 12px;
-    border-radius: 24px;
+    width: 95vw;
+    height: auto;        /* Let the box grow with content */
+    min-height: 480px;   /* Minimum size to keep the look */
+    padding: 24px 15px;
+    gap: 10px;           /* Tighter spacing between elements */
+    border-radius: 20px;
+  }
+
+  .header {
+    margin-bottom: 5px;
   }
 
   h1 {
-    font-size: 28px; /* Smaller title for mobile */
+    font-size: 28px;     /* Smaller Title */
+    margin-bottom: 2px;
+  }
+
+  .subtitle {
+    font-size: 10px;     /* Smaller Subtitle */
+    margin-top: 5px;
+    letter-spacing: 1.5px;
+  }
+
+  #nowPlaying {
+    font-size: 11px;
+    padding: 6px 12px;
   }
 
   #songQuote {
-    font-size: 13px;
-    min-height: 60px; /* Give more room for wrapped text */
-    max-width: 280px;
+    font-size: 12px;
+    max-width: 90%;
+    min-height: 60px;    /* Space for 3 lines of text */
+    margin: 5px auto;
+  }
+
+  #randomBtn {
+    padding: 12px 20px;
+    font-size: 12px;
+    width: 100%;         /* Full width on mobile */
+  }
+
+  .mood-title {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .mood-buttons {
+    gap: 8px;
   }
 
   .mood-buttons button {
-    flex: 1 1 40%; /* Two buttons per row on mobile */
+    flex: 1 1 45%;       /* Forces a 2x2 grid on mobile */
     font-size: 11px;
     padding: 10px 5px;
   }
