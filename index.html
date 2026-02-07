@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <title>Heartify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartify // Valentine Edition</title>
     <link rel="stylesheet" href="style.css" />
-  
-    <!-- Standard favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
-  
-    <!-- Apple / iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-  
-    <!-- Optional fallback -->
-    <link rel="icon" href="assets/favicon.ico" />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
 <body>
+  <div id="heart-container"></div>
 
   <div class="container">
-    <h1>Heartify</h1>
-    <p class="subtitle">by Inspire <span class="redCo">Co</span>.</p>
+    <div class="header">
+      <h1>Heartify</h1>
+      <p class="subtitle">With Love from <span class="redCo">Inspire <span class="redCo">Co</span>.</p>
 
-    <p id="nowPlaying">Playing: none</p>
-    <p id="songQuote"></p>
 
-    <button id="randomBtn">PLAY RANDOM SONG</button>
+    </div>
+
+    <p id="nowPlaying">Serenading: none</p>
+    
+    <div id="songQuote">
+        "Music is the shortest distance between two hearts."
+    </div>
+
+    <button id="randomBtn">💖 FIND A LOVE SONG</button>
 
     <div class="moods">
-      <p class="mood-title">Ela Unnaru ??</p>
+      <p class="mood-title">How does your heart feel?</p>
       <div class="mood-buttons">
-        <button data-mood="happy">😊 Happy</button>
-        <button data-mood="sad"> Sad</button>
-        <button data-mood="stress">😣 Stress</button>
-        <button data-mood="love">❤️ Love</button>
+        <button data-mood="happy">🥰 Crushing</button>
+        <button data-mood="sad">💔 Lonely</button>
+        <button data-mood="stress">🦋 Butterflies</button>
+        <button data-mood="love">🌹 Devoted</button>
       </div>
     </div>
-    
   </div>
 
   <audio id="audio"></audio>
-
   <script src="script.js"></script>
 </body>
 </html>
