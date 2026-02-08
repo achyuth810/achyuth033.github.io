@@ -305,3 +305,84 @@ h1 {
     padding: 10px 5px;
   }
 }
+/* 1. Global Styles & Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #1a0505;
+  color: white;
+  
+  /* THIS ENABLES SCROLLING */
+  min-height: 100vh; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 2. Navigation Link (The "ico" at the top) */
+.nav-glass-btn {
+  text-decoration: none;
+  color: white;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.nav-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* 3. The Main Glassy Box (Heartify Container) */
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 50, 50, 0.2); /* Reddish glow */
+}
+
+/* 4. Mosaic Grid (For Page 2 Moon Quotes) */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns like your image */
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.glass-box:hover {
+  transform: translateY(-5px);
+}
+
+.glass-box img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
