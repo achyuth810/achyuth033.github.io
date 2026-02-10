@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  console.log("API KEY START:", process.env.GEMINI_API_KEY?.slice(0,5));
 
   const API_KEY = process.env.GEMINI_API_KEY;
 
@@ -15,7 +16,6 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         contents: [
           {
-            role: "user",
             parts: [
               {
                 text: "Write ONE short poetic romantic sentence about moon and love."
@@ -28,22 +28,19 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    console.log("Gemini response:", data);
+    console.log(data);
 
     const quote =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Moonlight carries silent love between hearts.";
+      data?.candidates?.[0]?.content?.parts?.[0]?.text
+      || "Fallback quote";
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
     res.status(200).json({ quote });
 
-  } catch (error) {
+  } catch (err) {
 
-    console.error(error);
+    console.error(err);
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.status(200).json({
-      quote: "Moonlight carries silent love between hearts."
-    });
+    res.status(200).json({ quote: "Fallback quote" });
+
   }
 }
