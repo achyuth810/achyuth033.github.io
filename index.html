@@ -213,7 +213,7 @@
             <p class="mood-title">How does your heart feel?</p>
             <div class="mood-buttons">
                 <button data-mood="love">🥰 Crushing</button>
-                <button data-mood="sad">💔 Lonely</button>
+                <button data-mood="sad"> Sad</button>
                 <button data-mood="love">🦋 Butterflies</button>
                 <button data-mood="love">🌹 Devoted</button>
             </div>
@@ -281,25 +281,37 @@
         }
 
         function playCurrent() {
-            if (index >= playlist.length) {
-                playlist = buildPlaylist();
-                index = 0;
-            }
+    if (index >= playlist.length) {
+        playlist = buildPlaylist();
+        index = 0;
+    }
 
-            const currentSong = playlist[index];
-            audio.src = currentSong.url;
-            audio.play();
+    const currentSong = playlist[index];
+    audio.src = currentSong.url;
+    
+    // Explicitly load and then play
+    audio.load(); 
+    
+    const playPromise = audio.play();
 
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            // Playback started successfully
             nowPlaying.textContent = currentMode === "random" 
                 ? "Serenading: Random Love" 
                 : `Serenading: ${activeMood.charAt(0).toUpperCase() + activeMood.slice(1)}`;
-
+            
             songQuote.classList.remove('show');
             setTimeout(() => {
                 songQuote.textContent = currentSong.quote;
                 songQuote.classList.add('show');
             }, 400);
-        }
+        }).catch(error => {
+            console.error("Playback failed:", error);
+            nowPlaying.textContent = "Error: Click to Retry";
+        });
+    }
+}
 
         // Event Listeners
         audio.addEventListener("ended", () => {
@@ -332,14 +344,15 @@
             // playCurrent();
         });
         <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QHH5142S5X"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-QHH5142S5X');
-</script>
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHH5142S5X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-QHH5142S5X');
     </script>
 </body>
 </html>
