@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   const API_KEY = process.env.GEMINI_API_KEY;
 
   const url =
-`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
 
   try {
 
@@ -31,18 +31,19 @@ export default async function handler(req, res) {
     console.log("Gemini response:", data);
 
     const quote =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text
-      ?? "Moonlight carries silent love between hearts.";
+      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "Moonlight carries silent love between hearts.";
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.status(200).json({ quote });
 
   } catch (error) {
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    console.error(error);
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.status(200).json({
       quote: "Moonlight carries silent love between hearts."
     });
-
   }
 }
