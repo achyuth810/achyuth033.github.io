@@ -11,82 +11,223 @@
             --heart-red: #ff3333;
         }
         * { box-sizing: border-box; }
-        body, html { margin:0; padding:0; height:100%; width:100%; background:var(--space-black); color:white; font-family:'Segoe UI',system-ui,sans-serif; overflow-x:hidden; }
+        body, html { 
+            margin:0; 
+            padding:0; 
+            height:100%; 
+            width:100%; 
+            background:var(--space-black); 
+            color:white; 
+            font-family:'Segoe UI',system-ui,sans-serif; 
+            overflow-x:hidden; 
+        }
 
-        .top-nav { position:fixed; top:0; left:0; width:100%; padding:20px; display:flex; justify-content:space-between; align-items:center; z-index:100; }
-        .logo-glossy { font-size:1.2rem; font-weight:800; letter-spacing:-1px; color:#fff; text-transform:uppercase; display:flex; align-items:center; gap:12px; }
+        .top-nav { 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            padding:20px; 
+            display:flex; 
+            justify-content:space-between; 
+            align-items:center; 
+            z-index:100; 
+        }
+        .logo-glossy { 
+            font-size:1.2rem; 
+            font-weight:800; 
+            letter-spacing:-1px; 
+            color:#fff; 
+            text-transform:uppercase; 
+            display:flex; 
+            align-items:center; 
+            gap:12px; 
+        }
         .logo-glossy .co-red { color:var(--heart-red); }
 
-        .live-indicator { display:flex; align-items:center; gap:8px; color:var(--heart-red); font-size:0.85rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
-        .live-dot { width:9px; height:9px; background:var(--heart-red); border-radius:50%; box-shadow:0 0 12px var(--heart-red); animation:livePulse 1.6s infinite ease-in-out; }
-        @keyframes livePulse { 0%,100% { transform:scale(0.8); opacity:0.7; } 50% { transform:scale(1.4); opacity:1; } }
+        .live-indicator { 
+            display:flex; 
+            align-items:center; 
+            gap:8px; 
+            color:var(--heart-red); 
+            font-size:0.85rem; 
+            font-weight:700; 
+            letter-spacing:1.5px; 
+            text-transform:uppercase; 
+        }
+        .live-dot { 
+            width:9px; 
+            height:9px; 
+            background:var(--heart-red); 
+            border-radius:50%; 
+            box-shadow:0 0 12px var(--heart-red); 
+            animation:livePulse 1.6s infinite ease-in-out; 
+        }
+        @keyframes livePulse { 
+            0%,100% { transform:scale(0.8); opacity:0.7; } 
+            50% { transform:scale(1.4); opacity:1; } 
+        }
 
-        
+        #star-container { 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            z-index:1; 
+            pointer-events:none; 
+        }
+        .star { 
+            position:absolute; 
+            background:white; 
+            border-radius:50%; 
+            opacity:0.4; 
+        }
+        .star.blue { 
+            background:#aaccff; 
+            opacity:0.25; 
+        }
 
-        #star-container { position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; }
-        .star { position:absolute; background:white; border-radius:50%; opacity:0.4; }
-        .star.blue { background:#aaccff; opacity:0.25; }
+        .container { 
+            position:relative; 
+            z-index:10; 
+            display:flex; 
+            flex-direction:column; 
+            align-items:center; 
+            justify-content:center; 
+            min-height:100vh; 
+            padding:100px 20px 80px; 
+            text-align:center; 
+        }
+        .date-display { 
+            font-size:0.9rem; 
+            color:rgba(255,255,255,0.6); 
+            letter-spacing:3px; 
+            margin-bottom:5px; 
+            text-transform:uppercase; 
+        }
+        .moon-header-title { 
+            font-size:clamp(1rem,4vw,1.5rem); 
+            font-weight:200; 
+            text-transform:uppercase; 
+            letter-spacing:6px; 
+            color:rgba(255,255,255,0.9); 
+            margin-bottom:30px; 
+        }
 
-        .container { position:relative; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:80px 20px 40px; text-align:center; }
-        .date-display { font-size:0.9rem; color:rgba(255,255,255,0.6); letter-spacing:3px; margin-bottom:5px; text-transform:uppercase; }
-        .moon-header-title { font-size:clamp(1rem,4vw,1.5rem); font-weight:200; text-transform:uppercase; letter-spacing:6px; color:rgba(255,255,255,0.9); margin-bottom:30px; }
+        .moon-wrapper { 
+            position:relative; 
+            width:80vw; 
+            max-width:350px; 
+            aspect-ratio:1/1; 
+        }
+        #moon-image { 
+            width:100%; 
+            height:100%; 
+            border-radius:50%; 
+            filter:brightness(1.1) contrast(1.1) drop-shadow(0 0 30px var(--moon-glow)); 
+            opacity:0; 
+            transition:opacity 2s ease; 
+        }
 
-        .moon-wrapper { position:relative; width:80vw; max-width:350px; aspect-ratio:1/1; }
-        #moon-image { width:100%; height:100%; border-radius:50%; filter:brightness(1.1) contrast(1.1) drop-shadow(0 0 30px var(--moon-glow)); opacity:0; transition:opacity 2s ease; }
-
-        .label-overlay { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; opacity:0; transition:opacity 0.8s ease; }
+        .label-overlay { 
+            position:absolute; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            pointer-events:none; 
+            opacity:0; 
+            transition:opacity 0.8s ease; 
+        }
         .label-overlay.show { opacity:1; }
-        .landing-site { position:absolute; color:#fff; font-size:0.5rem; text-shadow:0 0 5px black; font-weight:bold; }
-        .dot { width:4px; height:4px; background:var(--heart-red); border-radius:50%; margin:0 auto 2px; }
+        .landing-site { 
+            position:absolute; 
+            color:#fff; 
+            font-size:0.5rem; 
+            text-shadow:0 0 5px black; 
+            font-weight:bold; 
+        }
+        .dot { 
+            width:4px; 
+            height:4px; 
+            background:var(--heart-red); 
+            border-radius:50%; 
+            margin:0 auto 2px; 
+        }
 
-        #quote-container { max-width:480px; min-height:110px; margin-top:30px; }
-        #daily-quote { font-size:clamp(1rem,4vw,1.22rem); line-height:1.65; font-family:'Georgia',serif; font-style:italic; opacity:0; transition:opacity 2.5s ease; color:#ddd; }
+        #quote-container { 
+            max-width:480px; 
+            min-height:110px; 
+            margin-top:30px; 
+        }
+        #daily-quote { 
+            font-size:clamp(1rem,4vw,1.22rem); 
+            line-height:1.65; 
+            font-family:'Georgia',serif; 
+            font-style:italic; 
+            opacity:0; 
+            transition:opacity 2.5s ease; 
+            color:#ddd; 
+        }
 
-        .controls { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:30px; }
-        .toggle-btn { background:rgba(255,255,255,0.05); border:1px solid #444; color:#aaa; padding:10px 20px; border-radius:30px; cursor:pointer; transition:0.3s; font-size:0.7rem; text-transform:uppercase; }
-        .toggle-btn:hover { border-color:white; color:white; background:rgba(255,255,255,0.1); }
-    /* Clean Observatory Footer */
-.satellite-footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    width: 100%;
-    max-width: 400px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
+        .controls { 
+            display:flex; 
+            flex-wrap:wrap; 
+            justify-content:center; 
+            gap:12px; 
+            margin-top:30px; 
+        }
+        .toggle-btn { 
+            background:rgba(255,255,255,0.05); 
+            border:1px solid #444; 
+            color:#aaa; 
+            padding:10px 20px; 
+            border-radius:30px; 
+            cursor:pointer; 
+            transition:0.3s; 
+            font-size:0.7rem; 
+            text-transform:uppercase; 
+        }
+        .toggle-btn:hover { 
+            border-color:white; 
+            color:white; 
+            background:rgba(255,255,255,0.1); 
+        }
 
-.footer-top {
-    font-size: 0.6rem;
-    color: var(--heart-red);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 800;
-}
+        /* Clean Observatory Footer */
+        .satellite-footer {
+            margin-top: 60px;
+            padding: 30px 20px 40px;
+            width: 100%;
+            max-width: 420px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            text-align: center;
+        }
 
-.footer-main {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 400;
-}
+        .footer-top {
+            font-size: 0.6rem;
+            color: var(--heart-red);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 800;
+        }
 
-/* Quote at the absolute bottom */
-#quote-container {
-    margin-top: 30px;
-    padding: 0 20px 40px;
-    max-width: 500px;
-}
+        .footer-main {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
 
-#daily-quote {
-    font-size: 1rem;
-    line-height: 1.6;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-}
+        .footer-text {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.45);
+            margin-top: 8px;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +237,6 @@
             Inspire <span class="co-red">Co</span>.
             <span class="live-indicator"><span class="live-dot"></span> LIVE</span>
         </div>
-        
     </nav>
 
     <div id="star-container"></div>
@@ -127,6 +267,13 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="satellite-footer">
+        <div class="footer-top">NASA LUNAR RECONNAISSANCE ORBITER</div>
+        <div class="footer-main">Live Images Captured Every Hour</div>
+        <div class="footer-text">Real-time Moon from 50km above the surface</div>
+    </footer>
+
     <script>
         const fallbackQuotes = ["The moon is a mirror for my thoughts of you on this cold February night."];
 
@@ -143,69 +290,53 @@
                 star.className = 'star';
                 if (Math.random() < 0.18) star.classList.add('blue');
                 const size = Math.random() * 3 + 0.8;
-                star.style.width = `${size}px`; star.style.height = `${size}px`;
+                star.style.width = `${size}px`; 
+                star.style.height = `${size}px`;
                 star.style.left = `${Math.random() * 100}vw`;
                 star.style.top = `${Math.random() * 100}vh`;
                 const duration = 1500 + Math.random() * 3500;
-                star.animate([{opacity:0.2},{opacity:Math.random()*0.9+0.4},{opacity:0.2}], {duration, iterations:Infinity, delay:Math.random()*2000});
+                star.animate([
+                    {opacity:0.2}, 
+                    {opacity:Math.random()*0.9+0.4}, 
+                    {opacity:0.2}
+                ], {duration, iterations:Infinity, delay:Math.random()*2000});
                 container.appendChild(star);
             }
         }
 
         const manualQuotes = [
-    "Hard work like yours reflects strength brighter than moonlight.",
+            "Hard work like yours reflects strength brighter than moonlight.",
+            "Every step forward shines like the moon rising after darkness.",
+            "Your dedication turns effort into quiet brilliance.",
+            "Success follows those who keep moving with courage — just like you.",
+            "Like the moon, your journey reflects patience and resilience.",
+            "Strength doesn’t always roar; sometimes it glows softly like moonlight.",
+            "Your growth reflects a powerful story written through hard work.",
+            "Each achievement reflects determination that never gave up.",
+            "The way you rise again and again mirrors the moon’s timeless rhythm.",
+            "Your effort reflects light even on the darkest nights.",
+            "Success looks beautiful when built with persistence like yours.",
+            "The moon reflects light — your work reflects strength.",
+            "Quiet determination always shines the brightest.",
+            "Every challenge faced becomes a reflection of courage.",
+            "Your journey reflects grace, strength, and unstoppable progress.",
+            "Some lights don’t need noise — they reflect naturally, just like you.",
+            "Hard work becomes moonlight when carried with patience.",
+            "Progress reflects power when driven by passion.",
+            "Even silence reflects the strength behind your success.",
+            "Like the moon, your presence reflects calm strength and steady growth."
+        ];
 
-"Every step forward shines like the moon rising after darkness.",
+        function getNewQuote() {
+            const quoteEl = document.getElementById('daily-quote');
+            quoteEl.style.opacity = 0;
 
-"Your dedication turns effort into quiet brilliance.",
-
-"Success follows those who keep moving with courage — just like you.",
-
-"Like the moon, your journey reflects patience and resilience.",
-
-"Strength doesn’t always roar; sometimes it glows softly like moonlight.",
-
-"Your growth reflects a powerful story written through hard work.",
-
-"Each achievement reflects determination that never gave up.",
-
-"The way you rise again and again mirrors the moon’s timeless rhythm.",
-
-"Your effort reflects light even on the darkest nights.",
-
-"Success looks beautiful when built with persistence like yours.",
-
-"The moon reflects light — your work reflects strength.",
-
-"Quiet determination always shines the brightest.",
-
-"Every challenge faced becomes a reflection of courage.",
-
-"Your journey reflects grace, strength, and unstoppable progress.",
-
-"Some lights don’t need noise — they reflect naturally, just like you.",
-
-"Hard work becomes moonlight when carried with patience.",
-
-"Progress reflects power when driven by passion.",
-
-"Even silence reflects the strength behind your success.",
-
-"Like the moon, your presence reflects calm strength and steady growth."
-
-];
-
-function getNewQuote() {
-    const quoteEl = document.getElementById('daily-quote');
-
-    quoteEl.style.opacity = 0;
-
-    setTimeout(() => {
-        const randomIndex = Math.floor(Math.random() * manualQuotes.length);
-        quoteEl.innerText = manualQuotes[randomIndex];
-        quoteEl.style.opacity = 1;
-    }, 800);
-}
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * manualQuotes.length);
+                quoteEl.innerText = manualQuotes[randomIndex];
+                quoteEl.style.opacity = 1;
+            }, 800);
+        }
 
         function loadMoon() {
             const now = new Date();
@@ -214,7 +345,7 @@ function getNewQuote() {
             const frame = String(hoursPassed % 8760).padStart(4, '0');
             const img = document.getElementById('moon-image');
             img.src = `https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/730x730_1x1_30p/moon.${frame}.jpg`;
-            img.onload = () => img.style.opacity = 1;
+            img.onload = () => { img.style.opacity = 1; };
         }
 
         function toggleLabels() {
@@ -229,11 +360,4 @@ function getNewQuote() {
         };
     </script>
 </body>
-<footer class="satellite-footer"></footer>
-    <div class="footer-line"></div>
-    <div class="footer-text">
-         Live Images Captured By NASA Lunar Reconnaissance Orbiter. Every Hour<br>
-
-    </div>
-</footer>
 </html>
