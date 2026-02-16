@@ -118,19 +118,25 @@
         }
 
         .moon-wrapper { 
-            position:relative; 
-            width:80vw; 
-            max-width:350px; 
-            aspect-ratio:1/1; 
-        }
-        #moon-image { 
-            width:100%; 
-            height:100%; 
-            border-radius:50%; 
-            filter:brightness(1.1) contrast(1.1) drop-shadow(0 0 30px var(--moon-glow)); 
-            opacity:0; 
-            transition:opacity 2s ease; 
-        }
+        position:relative; 
+        width:80vw; 
+        max-width:350px; 
+        aspect-ratio:1/1; 
+        border-radius:50%;  /* Add this */
+        overflow:hidden;    /* Add this - square edges cut cheyyi */
+        box-shadow: 
+            0 0 50px var(--moon-glow), 
+            0 0 100px rgba(245, 245, 255, 0.18), 
+            0 0 160px rgba(245, 245, 255, 0.08);  /* Natural multi-glow, square feel poyyi */
+    }
+    #moon-image { 
+        width:100%; 
+        height:100%; 
+        border-radius:50%; 
+        filter:brightness(1.1) contrast(1.1);  /* Drop-shadow remove cheyyi, wrapper meeda glow */
+        opacity:0; 
+        transition:opacity 2s ease; 
+    }
 
         .label-overlay { 
             position:absolute; 
@@ -169,7 +175,7 @@
             font-family:'Georgia',serif; 
             font-style:italic; 
             opacity:0; 
-            transition:opacity 2.5s ease; 
+            transition:opacity 1.2s ease; 
             color:#ddd; 
         }
 
@@ -272,8 +278,8 @@
     <!-- Footer -->
     <footer class="satellite-footer">
         <div class="footer-top">NASA LUNAR RECONNAISSANCE ORBITER</div>
-        <div class="footer-main">Live Images Captured Every Hour</div>
-        <div class="footer-text">Real-time Moon from 50km above the surface</div>
+        <div class="footer-main">Live Images Captured Every Hour Deep✨</div>
+        <div class="footer-text">Real-time from 50km above the Moon surface</div>
     </footer>
 
     <script>
@@ -314,7 +320,7 @@
             "Like the moon, your journey reflects patience and resilience.",
             "Strength doesn’t always roar; sometimes it glows softly like moonlight.",
             "Your growth reflects a powerful story written through hard work.",
-            "Each achievement reflects determination that never gave up.",
+            "Your Each achievement reflects determination and success.",
             "The way you rise again and again mirrors the moon’s timeless rhythm.",
             "Your effort reflects light even on the darkest nights.",
             "Success looks beautiful when built with persistence like yours.",
@@ -337,7 +343,7 @@
                 const randomIndex = Math.floor(Math.random() * manualQuotes.length);
                 quoteEl.innerText = manualQuotes[randomIndex];
                 quoteEl.style.opacity = 1;
-            }, 800);
+            }, 1200);
         }
 
         function loadMoon() {
