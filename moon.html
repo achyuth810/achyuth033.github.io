@@ -21,8 +21,7 @@
         .live-dot { width:9px; height:9px; background:var(--heart-red); border-radius:50%; box-shadow:0 0 12px var(--heart-red); animation:livePulse 1.6s infinite ease-in-out; }
         @keyframes livePulse { 0%,100% { transform:scale(0.8); opacity:0.7; } 50% { transform:scale(1.4); opacity:1; } }
 
-        .heartify-btn { text-decoration:none; color:white; background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2); padding:8px 18px; border-radius:40px; font-size:0.78rem; font-weight:600; display:flex; align-items:center; gap:6px; }
-        .heartify-btn .heart-icon { color:var(--heart-red); font-size:1.15rem; }
+        
 
         #star-container { position:fixed; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; }
         .star { position:absolute; background:white; border-radius:50%; opacity:0.4; }
@@ -97,9 +96,7 @@
             Inspire <span class="co-red">Co</span>.
             <span class="live-indicator"><span class="live-dot"></span> LIVE</span>
         </div>
-        <a href="index.html" class="heartify-btn">
-            <span class="heart-icon">❤</span> Heartify
-        </a>
+        
     </nav>
 
     <div id="star-container"></div>
@@ -155,20 +152,60 @@
             }
         }
 
-        async function getNewQuote() {
-            const quoteEl = document.getElementById('daily-quote');
-            quoteEl.style.opacity = 0;
-            setTimeout(async () => {
-                try {
-                    const res = await fetch('/api/quote');
-                    const data = await res.json();
-                    quoteEl.innerText = data.quote;
-                } catch (e) {
-                    quoteEl.innerText = fallbackQuotes[0];
-                }
-                quoteEl.style.opacity = 1;
-            }, 800);
-        }
+        const manualQuotes = [
+    "Hard work like yours reflects strength brighter than moonlight.",
+
+"Every step forward shines like the moon rising after darkness.",
+
+"Your dedication turns effort into quiet brilliance.",
+
+"Success follows those who keep moving with courage — just like you.",
+
+"Like the moon, your journey reflects patience and resilience.",
+
+"Strength doesn’t always roar; sometimes it glows softly like moonlight.",
+
+"Your growth reflects a powerful story written through hard work.",
+
+"Each achievement reflects determination that never gave up.",
+
+"The way you rise again and again mirrors the moon’s timeless rhythm.",
+
+"Your effort reflects light even on the darkest nights.",
+
+"Success looks beautiful when built with persistence like yours.",
+
+"The moon reflects light — your work reflects strength.",
+
+"Quiet determination always shines the brightest.",
+
+"Every challenge faced becomes a reflection of courage.",
+
+"Your journey reflects grace, strength, and unstoppable progress.",
+
+"Some lights don’t need noise — they reflect naturally, just like you.",
+
+"Hard work becomes moonlight when carried with patience.",
+
+"Progress reflects power when driven by passion.",
+
+"Even silence reflects the strength behind your success.",
+
+"Like the moon, your presence reflects calm strength and steady growth."
+
+];
+
+function getNewQuote() {
+    const quoteEl = document.getElementById('daily-quote');
+
+    quoteEl.style.opacity = 0;
+
+    setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * manualQuotes.length);
+        quoteEl.innerText = manualQuotes[randomIndex];
+        quoteEl.style.opacity = 1;
+    }, 800);
+}
 
         function loadMoon() {
             const now = new Date();
